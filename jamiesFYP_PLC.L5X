@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="35.01" TargetName="jamiesFYP_PLC" TargetType="Controller" ContainsContext="false" ExportDate="Fri Dec 12 15:47:40 2025" ExportOptions="NoRawData L5KData DecoratedData ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Target" Name="jamiesFYP_PLC" ProcessorType="1756-L71" MajorRev="35" MinorRev="12" TimeSlice="20" ShareUnusedTimeSlice="1" ProjectCreationDate="Wed Nov 19 12:09:40 2025" LastModifiedDate="Fri Dec 12 15:47:17 2025" SFCExecutionControl="CurrentActive" SFCRestartPosition="MostRecent"
+ SFCLastScan="DontScan" CommPath="Ethernet\10.188.2.144\Backplane\0" ProjectSN="16#709e_7d35" MatchProjectToController="false" CanUseRPIFromProducer="false" InhibitAutomaticFirmwareUpdate="0" PassThroughConfiguration="EnabledWithAppend" DownloadProjectDocumentationAndExtendedProperties="true" DownloadProjectCustomProperties="true" ReportMinorOverflow="false">
+<RedundancyInfo Enabled="false" KeepTestEditsOnSwitchOver="false" IOMemoryPadPercentage="90" DataTablePadPercentage="50"/>
+<Security Code="0" ChangesToDetect="16#ffff_ffff_ffff_ffff"/>
+<SafetyInfo/>
+<DataTypes/>
+<Modules>
+<Module Name="Local" CatalogNumber="1756-L71" Vendor="1" ProductType="14" ProductCode="92" Major="35" Minor="12" ParentModule="Local" ParentModPortId="1" Inhibited="false" MajorFault="true"
+>
+<EKey State="ExactMatch"/>
+<Ports>
+<Port Id="1" Address="0" Type="ICP" Upstream="false">
+<Bus Size="10"/>
+</Port>
+</Ports>
+</Module>
+<Module Name="jamiesFYP_DCoutput" CatalogNumber="1756-OB16D" Vendor="1" ProductType="7" ProductCode="4" Major="3" Minor="1" ParentModule="Local" ParentModPortId="1" Inhibited="true" MajorFault="false"
+>
+<EKey State="CompatibleModule"/>
+<Ports>
+<Port Id="1" Address="1" Type="ICP" Upstream="true"/>
+</Ports>
+<Communications CommMethod="536870914">
+<ConfigTag ConfigSize="40" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[44,19,0,0,0,0,0,0,0,0,-1,-1,-1,0]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="AB:1756_DO_DC_Diag:C:0">
+<DataValueMember Name="ProgToFaultEn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FaultMode" DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_0000_0000_0000_0000"/>
+<DataValueMember Name="FaultValue" DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_0000_0000_0000_0000"/>
+<DataValueMember Name="ProgMode" DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_0000_0000_0000_0000"/>
+<DataValueMember Name="ProgValue" DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_0000_0000_0000_0000"/>
+<DataValueMember Name="FaultLatchEn" DataType="DINT" Radix="Binary" Value="2#1111_1111_1111_1111_1111_1111_1111_1111"/>
+<DataValueMember Name="NoLoadEn" DataType="DINT" Radix="Binary" Value="2#1111_1111_1111_1111_1111_1111_1111_1111"/>
+<DataValueMember Name="OutputVerifyEn" DataType="DINT" Radix="Binary" Value="2#1111_1111_1111_1111_1111_1111_1111_1111"/>
+</Structure>
+</Data>
+</ConfigTag>
+<Connections>
+<Connection Name="Diagnostic" RPI="20000" Type="Output" EventID="0" ProgrammaticallySendEventTrigger="false">
+<InputTag ExternalAccess="Read/Write">
+<Data Format="Decorated">
+<Structure DataType="AB:1756_DO_DC_Diag:I:0">
+<DataValueMember Name="Fault" DataType="DINT" Radix="Binary" Value="2#1111_1111_1111_1111_1111_1111_1111_1111"/>
+<DataValueMember Name="Data" DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_0000_0000_0000_0000"/>
+<ArrayMember Name="CSTTimestamp" DataType="DINT" Dimensions="2" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="0"/>
+</ArrayMember>
+<DataValueMember Name="FuseBlown" DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_0000_0000_0000_0000"/>
+<DataValueMember Name="NoLoad" DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_0000_0000_0000_0000"/>
+<DataValueMember Name="OutputVerifyFault" DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_0000_0000_0000_0000"/>
+</Structure>
+</Data>
+</InputTag>
+<OutputTag ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[0]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="AB:1756_DO:O:0">
+<DataValueMember Name="Data" DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_0000_0000_0000_0000"/>
+</Structure>
+</Data>
+</OutputTag>
+</Connection>
+</Connections>
+</Communications>
+<ExtendedProperties>
+<public><ConfigID>504</ConfigID><CatNum>1756-OB16D</CatNum></public>
+</ExtendedProperties>
+</Module>
+<Module Name="jamiesFYP_DCinput" CatalogNumber="1756-IB16D" Vendor="1" ProductType="7" ProductCode="2" Major="3" Minor="1" ParentModule="Local" ParentModPortId="1" Inhibited="false" MajorFault="false"
+>
+<EKey State="CompatibleModule"/>
+<Ports>
+<Port Id="1" Address="2" Type="ICP" Upstream="true"/>
+</Ports>
+<Communications CommMethod="536870913">
+<ConfigTag ConfigSize="40" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[44,17,0,0,0,0,1,1,1,1,1,1,1,1,-1,-1,-1,0,-1,0]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="AB:1756_DI_DC_Diag:C:0">
+<DataValueMember Name="DiagCOSDisable" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FilterOffOn_0_7" DataType="SINT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="FilterOnOff_0_7" DataType="SINT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="FilterOffOn_8_15" DataType="SINT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="FilterOnOff_8_15" DataType="SINT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="COSOnOffEn" DataType="DINT" Radix="Binary" Value="2#1111_1111_1111_1111_1111_1111_1111_1111"/>
+<DataValueMember Name="COSOffOnEn" DataType="DINT" Radix="Binary" Value="2#1111_1111_1111_1111_1111_1111_1111_1111"/>
+<DataValueMember Name="FaultLatchEn" DataType="DINT" Radix="Binary" Value="2#1111_1111_1111_1111_1111_1111_1111_1111"/>
+<DataValueMember Name="OpenWireEn" DataType="DINT" Radix="Binary" Value="2#1111_1111_1111_1111_1111_1111_1111_1111"/>
+</Structure>
+</Data>
+</ConfigTag>
+<Connections>
+<Connection Name="StandardInput" RPI="20000" Type="Input" EventID="0" ProgrammaticallySendEventTrigger="false">
+<InputTag ExternalAccess="Read/Write">
+<Data Format="Decorated">
+<Structure DataType="AB:1756_DI_DC_Diag:I:0">
+<DataValueMember Name="Fault" DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_1111_1111_1111_1111"/>
+<DataValueMember Name="Data" DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_0000_0000_0000_0000"/>
+<ArrayMember Name="CSTTimestamp" DataType="DINT" Dimensions="2" Radix="Decimal">
+<Element Index="[0]" Value="-1670688867"/>
+<Element Index="[1]" Value="-2147483647"/>
+</ArrayMember>
+<DataValueMember Name="OpenWire" DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_1111_1111_1111_1111"/>
+</Structure>
+</Data>
+</InputTag>
+</Connection>
+</Connections>
+</Communications>
+<ExtendedProperties>
+<public><ConfigID>203</ConfigID><CatNum>1756-IB16D</CatNum></public>
+</ExtendedProperties>
+</Module>
+<Module Name="jamiesFYP_Ethernet" CatalogNumber="1756-EN2T" Vendor="1" ProductType="12" ProductCode="166" Major="11" Minor="1" ParentModule="Local" ParentModPortId="1" Inhibited="false" MajorFault="false"
+>
+<EKey State="CompatibleModule"/>
+<Ports>
+<Port Id="1" Address="5" Type="ICP" Upstream="true"/>
+<Port Id="2" Address="10.188.2.144" Type="Ethernet" Upstream="false">
+<Bus/>
+</Port>
+</Ports>
+<Communications CommMethod="536870914">
+<Connections/>
+</Communications>
+<ExtendedProperties>
+<public><Vendor>Rockwell Automation/Allen-Bradley</Vendor><CatNum>1756-EN2T</CatNum><ConfigID>4325481</ConfigID></public>
+</ExtendedProperties>
+</Module>
+<Module Name="GLW_LAB_LD_ROB01" CatalogNumber="FANUC Robot R30iB Plus/A" Vendor="356" ProductType="12" ProductCode="4" Major="3" Minor="1" ParentModule="jamiesFYP_Ethernet" ParentModPortId="2" Inhibited="false" MajorFault="false"
+ SafetyEnabled="false">
+<EKey State="CompatibleModule"/>
+<Ports>
+<Port Id="1" Address="10.188.2.186" Type="Ethernet" Upstream="true"/>
+</Ports>
+<Communications>
+<ConfigData ConfigSize="0">
+<Data Format="L5K">
+<![CDATA[[4,100]]]>
+</Data>
+</ConfigData>
+<Connections>
+<Connection Name="Standard_Slot_01" RPI="32000" Type="StandardDataDriven" OutputSize="8" InputSize="8" EventID="0" ProgrammaticallySendEventTrigger="false" Priority="Scheduled" InputConnectionType="Unicast" InputProductionTrigger="Cyclic" ConnectionPath="20 04 24 64 2c 97 2c 65"
+ InputTagSuffix="I1" OutputTagSuffix="O1">
+<InputTag ExternalAccess="Read/Write">
+<Data Format="Decorated">
+<Structure DataType="FR:Standard_RobotPlus_8Bytes:I1:0">
+<ArrayMember Name="Input" DataType="SINT" Dimensions="8" Radix="Hex">
+<Element Index="[0]" Value="16#00"/>
+<Element Index="[1]" Value="16#00"/>
+<Element Index="[2]" Value="16#00"/>
+<Element Index="[3]" Value="16#00"/>
+<Element Index="[4]" Value="16#00"/>
+<Element Index="[5]" Value="16#00"/>
+<Element Index="[6]" Value="16#00"/>
+<Element Index="[7]" Value="16#00"/>
+</ArrayMember>
+</Structure>
+</Data>
+</InputTag>
+<OutputTag ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[0,0,0,0,0,0,0,0]]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="FR:Standard_RobotPlus_8Bytes:O1:0">
+<ArrayMember Name="Output" DataType="SINT" Dimensions="8" Radix="Hex">
+<Element Index="[0]" Value="16#00"/>
+<Element Index="[1]" Value="16#00"/>
+<Element Index="[2]" Value="16#00"/>
+<Element Index="[3]" Value="16#00"/>
+<Element Index="[4]" Value="16#00"/>
+<Element Index="[5]" Value="16#00"/>
+<Element Index="[6]" Value="16#00"/>
+<Element Index="[7]" Value="16#00"/>
+</ArrayMember>
+</Structure>
+</Data>
+</OutputTag>
+</Connection>
+</Connections>
+</Communications>
+<ExtendedProperties>
+<public><Vendor>FANUC Robotics America</Vendor><CatNum>FANUC Robot R30iB Plus</CatNum><Conn0RPI>32000</Conn0RPI><Conn0IN>8</Conn0IN><Conn0OUT>8</Conn0OUT><Conn1RPI>0</Conn1RPI><Conn1IN>8</Conn1IN><Conn1OUT>8</Conn1OUT><Conn2RPI>0</Conn2RPI><Conn2IN>8</Conn2IN><Conn2OUT>8</Conn2OUT><Conn3RPI>0</Conn3RPI><Conn3IN>8</Conn3IN><Conn3OUT>8</Conn3OUT><Conn4RPI>0</Conn4RPI><Conn4IN>0</Conn4IN><Conn4OUT>0</Conn4OUT><Conn5RPI>0</Conn5RPI><Conn5IN>0</Conn5IN><Conn5OUT>0</Conn5OUT><ConfigID>711</ConfigID></public>
+</ExtendedProperties>
+</Module>
+</Modules>
+<AddOnInstructionDefinitions/>
+<Tags>
+<Tag Name="HMI_Reset" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Ignition HMI Reset]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="HMI_Start" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Ignition HMI Start]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="HMI_Stop" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Ignition HMI Stop]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="LDRobot_AtFullView" TagType="Alias" Radix="Decimal" AliasFor="GLW_LAB_LD_ROB01:I1.Input[3].3" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Robot at Fluke Full View]]>
+</Description>
+</Tag>
+<Tag Name="LDRobot_AtHomePos" TagType="Alias" Radix="Hex" AliasFor="GLW_LAB_LD_ROB01:I1.Input[3].0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Robot at Home Pos]]>
+</Description>
+</Tag>
+<Tag Name="LDRobot_AtPos1" TagType="Alias" Radix="Decimal" AliasFor="GLW_LAB_LD_ROB01:I1.Input[3].1" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Robot at Fluke Pos 1]]>
+</Description>
+</Tag>
+<Tag Name="LDRobot_AtPos2" TagType="Alias" Radix="Decimal" AliasFor="GLW_LAB_LD_ROB01:I1.Input[3].2" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Robot at Fluke Pos 2]]>
+</Description>
+</Tag>
+<Tag Name="LDRobot_Auto" TagType="Alias" Radix="Decimal" AliasFor="GLW_LAB_LD_ROB01:I1.Input[2].4" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Robot in AUTO Mode]]>
+</Description>
+</Tag>
+<Tag Name="LDRobot_CycleComplete" TagType="Alias" Radix="Decimal" AliasFor="GLW_LAB_LD_ROB01:I1.Input[3].4" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Robot Cycle Complete]]>
+</Description>
+</Tag>
+<Tag Name="LDRobot_CycleStop" TagType="Alias" Radix="Decimal" AliasFor="GLW_LAB_LD_ROB01:O1.Output[0].3" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Robot Cycle Stop]]>
+</Description>
+</Tag>
+<Tag Name="LDRobot_Enable" TagType="Alias" Radix="Decimal" AliasFor="GLW_LAB_LD_ROB01:O1.Output[0].7" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Robot Enable]]>
+</Description>
+</Tag>
+<Tag Name="LDRobot_EStop" TagType="Alias" Radix="Decimal" AliasFor="GLW_LAB_LD_ROB01:I1.Input[2].7" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Robot Emergency Stop Pressed]]>
+</Description>
+</Tag>
+<Tag Name="LDRobot_FaultReset" TagType="Alias" Radix="Decimal" AliasFor="GLW_LAB_LD_ROB01:O1.Output[0].4" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Robot Fault Reset]]>
+</Description>
+</Tag>
+<Tag Name="LDRobot_Hold" TagType="Alias" Radix="Decimal" AliasFor="GLW_LAB_LD_ROB01:O1.Output[0].1" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Robot Hold]]>
+</Description>
+</Tag>
+<Tag Name="LDRobot_IMSTP" TagType="Alias" Radix="Decimal" AliasFor="GLW_LAB_LD_ROB01:O1.Output[0].0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Robot Immediate Stop]]>
+</Description>
+</Tag>
+<Tag Name="LDRobot_ProgRunning" TagType="Alias" Radix="Decimal" AliasFor="GLW_LAB_LD_ROB01:I1.Input[0].2" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Robot Program Running]]>
+</Description>
+</Tag>
+<Tag Name="LDRobot_SFSPD" TagType="Alias" Radix="Decimal" AliasFor="GLW_LAB_LD_ROB01:O1.Output[0].2" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Robot Safety Fast Stop Device]]>
+</Description>
+</Tag>
+<Tag Name="LDRobot_Start" TagType="Alias" Radix="Decimal" AliasFor="GLW_LAB_LD_ROB01:O1.Output[0].5" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Robot Start]]>
+</Description>
+</Tag>
+<Tag Name="LDRobot_SysReady" TagType="Alias" Radix="Decimal" AliasFor="GLW_LAB_LD_ROB01:I1.Input[0].1" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Robot System Ready]]>
+</Description>
+</Tag>
+<Tag Name="LDRobot_T1" TagType="Alias" Radix="Decimal" AliasFor="GLW_LAB_LD_ROB01:I1.Input[2].5" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Robot in T1 Mode]]>
+</Description>
+</Tag>
+<Tag Name="LDRobot_T2" TagType="Alias" Radix="Decimal" AliasFor="GLW_LAB_LD_ROB01:I1.Input[2].6" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Robot in T2 Mode]]>
+</Description>
+</Tag>
+<Tag Name="TON_FaultReset" TagType="Base" DataType="TIMER" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[0,2000,0]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="2000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="TON_HMI_Start" TagType="Base" DataType="TIMER" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[0,80,0]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="80"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="TON_HMI_Stop" TagType="Base" DataType="TIMER" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[0,80,0]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="80"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+</Tags>
+<Programs>
+<Program Name="MainProgram" TestEdits="false" MainRoutineName="MainRoutine" Disabled="false" UseAsFolder="false">
+<Tags>
+<Tag Name="I_ONS" TagType="Base" DataType="DINT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+</Tags>
+<Routines>
+<Routine Name="IO_mapping" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Text>
+<![CDATA[XIC(HMI_Start)TON(TON_HMI_Start,?,?);]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Text>
+<![CDATA[XIC(TON_HMI_Start.DN)ONS(I_ONS.0)OTU(HMI_Start);]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Text>
+<![CDATA[XIC(HMI_Stop)TON(TON_HMI_Stop,?,?);]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Text>
+<![CDATA[XIC(TON_HMI_Stop.DN)ONS(I_ONS.1)OTU(HMI_Stop);]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Text>
+<![CDATA[XIC(HMI_Reset)TON(TON_FaultReset,?,?);]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Text>
+<![CDATA[XIC(TON_FaultReset.DN)ONS(I_ONS.2)OTU(HMI_Reset);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+<Routine Name="MainRoutine" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Text>
+<![CDATA[JSR(IO_mapping,0);]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Text>
+<![CDATA[JSR(RobotControl,0);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+<Routine Name="RobotControl" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Text>
+<![CDATA[OTE(LDRobot_IMSTP);]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Text>
+<![CDATA[OTE(LDRobot_Hold);]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Text>
+<![CDATA[OTE(LDRobot_SFSPD);]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Text>
+<![CDATA[OTE(LDRobot_Enable);]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Text>
+<![CDATA[XIO(HMI_Stop)OTE(LDRobot_CycleStop);]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Text>
+<![CDATA[XIC(HMI_Start)OTE(LDRobot_Start);]]>
+</Text>
+</Rung>
+<Rung Number="6" Type="N">
+<Text>
+<![CDATA[XIC(HMI_Reset)OTE(LDRobot_FaultReset);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+</Program>
+</Programs>
+<Tasks>
+<Task Name="MainTask" Type="CONTINUOUS" Priority="10" Watchdog="500" DisableUpdateOutputs="false" InhibitTask="false">
+<ScheduledPrograms>
+<ScheduledProgram Name="MainProgram"/>
+</ScheduledPrograms>
+</Task>
+</Tasks>
+<CST MasterID="0"/>
+<WallClockTime LocalTimeAdjustment="0" TimeZone="0"/>
+<Trends/>
+<DataLogs/>
+<TimeSynchronize Priority1="128" Priority2="128" PTPEnable="false"/>
+</Controller>
+</RSLogix5000Content>
